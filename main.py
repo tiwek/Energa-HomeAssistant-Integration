@@ -4,6 +4,7 @@
 
 from selenium import webdriver
 from pyvirtualdisplay import Display
+from datetime import datetime
 import paho.mqtt.client as mqtt
 import json
 import argparse
@@ -38,7 +39,10 @@ username = args.mqtt_username
 password = args.mqtt_password
 topic = args.mqtt_topic
 
-print("Wait...")
+now = datetime.now()
+print(now, end=" ")
+
+print(topic, end=" ")
 
 display = Display(visible=0, size=(800, 600))
 display.start()
